@@ -1,0 +1,38 @@
+<!doctype html>
+<html style="min-width:300px; PADDING:15px">
+  <head>
+    <title>Nifty Shift</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-12">
+	<h3>Scheduler</h3>
+	<p>This extension helps you get your shifts for the week downloaded as a calendar file.</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+	<p>
+	  <b>Don't:</b>
+      <br>
+      <ul>
+        <li>Assume that this is always correct. Please double check that the calendar events match what is shown on ZED</li>
+        <li>Use this for the weekly text view or monthly view. It won't work</li>
+      </ul>      
+	</p>	
+  <br>
+	<span id="data">Press the button</span>
+      </div>
+    </div>
+
+    <button id="clicky" class="btn btn-primary">Get dates!</button>
+
+    <script src="FileSaver.min.js"></script>
+    <script src="ics.js"></script>
+    <script src="content.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
