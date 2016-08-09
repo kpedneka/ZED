@@ -1,12 +1,11 @@
 // Listen for messages
-//document.addEventListener('DOMContentLoaded');
 
 chrome.runtime.onMessage.addListener(function(msg, sender, response) {
 	var userInfo = document.getElementsByClassName("user-info");
 	var user = userInfo[0].childNodes[2].textContent;
 	user = user.replace(/\W+/g, "");
-	console.log("This schedule is for "+user);
-	
+	console.log("schedule for "+user)
+
 	//times and locations are the shift information
 	var shiftDates = document.getElementsByTagName("th"); //tr columns (calendar dates)
 	var shiftDays = document.getElementsByClassName("scheduleColumn"); //td columns
@@ -41,12 +40,15 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response) {
 			{
 				continue;
 			}
+			console.log(shiftDays[i].children)
 			//do check for covered by someone else
 			var locationSplit = locations[locloop].innerText;
+			locationSplit = locationSplit.replace(/\n\s+/g, '');
+			console.log("\""+locationSplit+"\"");
 			locationSplit = locationSplit.split(" ");
-			console.log(locationSplit.length);
+			//console.log(locationSplit.length);
 			if(locationSplit.length != 1) {
-				console.log("comparing "+user+" to "+locationSplit[locationSplit.length-1]);
+				console.log("comparing "+user+" to \""+locationSplit[locationSplit.length-1]+"\"");
 				if (user.localeCompare(locationSplit[locationSplit.length-1]) != 0)
 				{
 					locloop++;
@@ -61,7 +63,6 @@ chrome.runtime.onMessage.addListener(function(msg, sender, response) {
     		places: locations[locloop].innerText
     		});
 			
-			//console.log(shortDate+ " "+times[timeloop].innerText+" "+locations[locloop].innerText);
     		timeloop++;
     		locloop++;    		
 		}	

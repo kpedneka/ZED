@@ -3,7 +3,7 @@
 
 	"name": "Nifty Shift",
 	"description": "This extension grabs your schedule and makes calendar events out of them",
-	"version": "0.3",
+	"version": "0.4",
 	"icons": {
 		"128": "calendar-128.png"
 	},

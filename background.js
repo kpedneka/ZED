@@ -13,5 +13,4 @@ function getInfo(info) {
         console.log("works better now "+info);
         document.getElementById('data').textContent = info; 
     }
-    console.log("hello")
 }
